@@ -1,0 +1,31 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+import "binding.proto";
+
+message Category {
+  int64 id = 1;
+  string name = 2;
+  bool counts_towards_overall = 3;
+  optional string summary = 4;
+}
+
+message Song {
+  int64 id = 1;
+  bytes hash = 2;
+  string name = 3;
+  optional string sub_name = 4;
+  string artist = 5;
+  repeated string mappers = 6;
+}
+
+message Difficulty {
+  int64 id = 1;
+  double complexity = 2;
+  int64 max_score = 3;
+  string mode = 4;
+  int32 difficulty = 5;
+  int64 song_id = 6;
+  int64 category_id = 7;
+  google.protobuf.Timestamp date_ranked = 8;
+  repeated LeaderboardResourceBinding resource_bindings = 9;
+}

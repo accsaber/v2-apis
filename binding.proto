@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+enum DataSource {
+  SCORE_SABER = 0;
+  BEAT_LEADER = 1;
+  BEAT_SAVER = 2;
+}
+
+message PlayerResourceBinding {
+  DataSource data_source = 1;
+  uint64 player_id = 2;
+  uint64 platform_id = 3;
+}
+
+message LeaderboardResourceBinding {
+  DataSource data_source = 1;
+  string platform_id = 2;
+  int64 difficulty_id = 3;
+}
