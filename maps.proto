@@ -28,4 +28,5 @@ message Difficulty {
   int64 category_id = 7;
   google.protobuf.Timestamp date_ranked = 8;
   repeated LeaderboardResourceBinding resource_bindings = 9;
+  optional Song song_data = 10;
 }

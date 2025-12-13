@@ -25,7 +25,7 @@ message PlayerScores {
   repeated Score scores = 2;
 }
 
-message PlayerProfilePage {
+message PlayerProfile {
   Player player = 1;
   CategoryPlayer category_profile = 2;
   PlayerScores scores = 3;

@@ -1,0 +1,17 @@
+syntax = "proto3";
+package acc_saber_public;
+import "maps.proto";
+import "player.proto";
+
+message PlayerProfileRequest {
+  int64 player_id = 1;
+  optional string category_name = 2;
+}
+
+message MapListingRequest { optional string category_name = 1; }
+message MapListing { repeated Difficulty maps = 1; }
+
+service PublicAPI {
+  rpc GetPlayerProfile(PlayerProfileRequest) returns (PlayerProfile);
+  rpc GetMapListing(MapListingRequest) returns (MapListing);
+}
