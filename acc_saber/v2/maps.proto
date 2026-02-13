@@ -1,12 +1,15 @@
 syntax = "proto3";
+package acc_saber.v2;
+
+import "acc_saber/v2/binding.proto";
 import "google/protobuf/timestamp.proto";
-import "binding.proto";
 
 message Category {
-  int64 id = 1;
+  int32 id = 1;
   string name = 2;
-  bool counts_towards_overall = 3;
-  optional string summary = 4;
+  string display_name = 3;
+  bool counts_towards_overall = 4;
+  optional string summary = 5;
 }
 
 message Song {

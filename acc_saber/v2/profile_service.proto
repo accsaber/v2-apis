@@ -1,0 +1,39 @@
+syntax = "proto3";
+package acc_saber.v2;
+
+import "acc_saber/v2/player.proto";
+import "google/api/annotations.proto";
+
+message GetPlayerCategoryStatsRequest {
+  int64 player_id = 1;
+}
+
+message GetPlayerCategoryStatsResponse {
+  Player player = 1;
+  repeated CategoryPlayer category_info = 2;
+}
+
+message NearbyPlayerProfile {
+  Player player = 1;
+  CategoryPlayer category_info = 2;
+}
+
+message GetNearbyPlayersRequest {
+  int64 player_id = 1;
+  optional string category_name = 2;
+  optional int32 num_before = 3;
+  optional int32 num_after = 4;
+}
+message GetNearbyPlayersResponse {
+  repeated NearbyPlayerProfile players = 1;
+}
+
+service ProfileService {
+  rpc GetPlayerCategoryStats(GetPlayerCategoryStatsRequest) returns (GetPlayerCategoryStatsResponse) {
+    option (google.api.http) = {get: "/v2/profile/{player_id}/category_stats"};
+  }
+
+  rpc GetNearbyPlayers(GetNearbyPlayersRequest) returns (GetNearbyPlayersResponse) {
+    option (google.api.http) = {get: "/v2/profile/{player_id}/nearby"};
+  }
+}

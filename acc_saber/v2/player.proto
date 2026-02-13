@@ -1,0 +1,29 @@
+syntax = "proto3";
+package acc_saber.v2;
+
+import "acc_saber/v2/binding.proto";
+import "acc_saber/v2/metadata.proto";
+import "acc_saber/v2/score.proto";
+
+message Player {
+  int64 id = 1;
+  string name = 2;
+  optional string avatar_url = 3;
+  optional string hmd = 4;
+  repeated PlayerResourceBinding resource_bindings = 5;
+}
+
+message CategoryPlayer {
+  int64 player_id = 1;
+  string category_name = 2;
+  double ap = 3;
+  optional int32 rank = 4;
+  optional int32 rank_last_week = 5;
+  uint32 play_count = 6;
+  optional uint32 peak_rank = 7;
+}
+
+message PlayerScores {
+  Pagination metadata = 1;
+  repeated Score scores = 2;
+}

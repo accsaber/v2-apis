@@ -1,9 +1,11 @@
 syntax = "proto3";
+package acc_saber.v2;
 
 enum DataSource {
-  SCORE_SABER = 0;
-  BEAT_LEADER = 1;
-  BEAT_SAVER = 2;
+  DATA_SOURCE_UNSPECIFIED = 0;
+  DATA_SOURCE_SCORESABER = 1;
+  DATA_SOURCE_BEATLEADER = 2;
+  DATA_SOURCE_BEATSAVER = 3;
 }
 
 message PlayerResourceBinding {

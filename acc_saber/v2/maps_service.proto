@@ -1,0 +1,17 @@
+syntax = "proto3";
+package acc_saber.v2;
+
+import "acc_saber/v2/maps.proto";
+import "google/api/annotations.proto";
+
+message GetCategoriesRequest {}
+
+message GetCategoriesResponse {
+  repeated Category categories = 1;
+}
+
+service MapsService {
+  rpc GetCategories(GetCategoriesRequest) returns (GetCategoriesResponse) {
+    option (google.api.http) = {get: "/v2/categories"};
+  }
+}

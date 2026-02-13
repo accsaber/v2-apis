@@ -1,0 +1,22 @@
+syntax = "proto3";
+package acc_saber.v2;
+
+import "acc_saber/v2/binding.proto";
+import "google/protobuf/timestamp.proto";
+
+message Score {
+  uint64 id = 1;
+  uint64 score = 2;
+  uint64 unmodified_score = 3;
+  DataSource data_source = 4;
+  string source_difficulty_id = 5;
+  uint64 source_score_id = 6;
+  uint64 source_player_id = 7;
+  repeated string modifiers = 8;
+  double accuracy = 9;
+  double ap = 10;
+  double weighted_ap = 11;
+  uint64 player_id = 12;
+  uint64 difficulty_id = 13;
+  google.protobuf.Timestamp time_set = 14;
+}
