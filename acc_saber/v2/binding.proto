@@ -3,9 +3,9 @@ package acc_saber.v2;
 
 enum DataSource {
   DATA_SOURCE_UNSPECIFIED = 0;
-  DATA_SOURCE_SCORESABER = 1;
-  DATA_SOURCE_BEATLEADER = 2;
-  DATA_SOURCE_BEATSAVER = 3;
+  DATA_SOURCE_SCORE_SABER = 1;
+  DATA_SOURCE_BEAT_LEADER = 2;
+  DATA_SOURCE_BEAT_SAVER = 3;
 }
 
 message PlayerResourceBinding {
