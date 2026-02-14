@@ -6,7 +6,7 @@ import "acc_saber/v2/metadata.proto";
 import "acc_saber/v2/score.proto";
 
 message Player {
-  int64 id = 1;
+  fixed64 id = 1;
   string name = 2;
   optional string avatar_url = 3;
   optional string hmd = 4;
