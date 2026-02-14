@@ -14,13 +14,14 @@ message Player {
 }
 
 message CategoryPlayer {
-  int64 player_id = 1;
+  fixed64 player_id = 1;
   string category_name = 2;
   double ap = 3;
   optional int32 rank = 4;
   optional int32 rank_last_week = 5;
   uint32 play_count = 6;
   optional uint32 peak_rank = 7;
+  double average_acc = 8;
 }
 
 message PlayerScores {

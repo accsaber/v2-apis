@@ -5,7 +5,7 @@ import "acc_saber/v2/player.proto";
 import "google/api/annotations.proto";
 
 message GetPlayerCategoryStatsRequest {
-  int64 player_id = 1;
+  fixed64 player_id = 1;
 }
 
 message GetPlayerCategoryStatsResponse {
@@ -19,13 +19,14 @@ message NearbyPlayerProfile {
 }
 
 message GetNearbyPlayersRequest {
-  int64 player_id = 1;
+  fixed64 player_id = 1;
   optional string category_name = 2;
   optional int32 num_before = 3;
   optional int32 num_after = 4;
 }
 message GetNearbyPlayersResponse {
   repeated NearbyPlayerProfile players = 1;
+  NearbyPlayerProfile comparison = 2;
 }
 
 service ProfileService {

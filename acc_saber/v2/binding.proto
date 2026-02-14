@@ -10,8 +10,8 @@ enum DataSource {
 
 message PlayerResourceBinding {
   DataSource data_source = 1;
-  uint64 player_id = 2;
-  uint64 platform_id = 3;
+  fixed64 player_id = 2;
+  fixed64 platform_id = 3;
 }
 
 message LeaderboardResourceBinding {
